@@ -1,0 +1,87 @@
+.sidebar {
+	grid-area: auto / span 3 ;
+	background-color: var(--dark-bg);
+	border-radius: 8px;
+	padding: 10px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+nav {
+	flex-grow: 1;
+}
+.title {
+	text-transform: uppercase;
+	font-size: 1.5rem;
+	margin-bottom: 2rem;
+}
+
+.list {
+	list-style: none;
+	margin-bottom: 2rem;
+	height: 230px;
+overflow-y: scroll;
+}
+
+
+/* width */
+.list::-webkit-scrollbar {
+	width: 5px;
+	cursor: pointer;
+}
+/* button */
+.list::-webkit-scrollbar-button {
+	display: none;
+}
+/* Handle */
+.list::-webkit-scrollbar-thumb {
+	background: var(--secondary); 
+	transition: all .3s;
+	cursor: pointer;
+}
+/* Handle on hover */
+.list::-webkit-scrollbar-thumb:hover {
+	background: var(--accent); 
+}
+/* Track */
+.list::-webkit-scrollbar-track {
+	background: var(--dark-bg); 
+}
+
+
+
+.list li {
+	margin-bottom: 10px;
+
+}
+.list a {
+	text-decoration: none;
+	color: var(--secondary);
+	transition: .3s;
+}
+.list a:hover {
+	color: var(--accent);
+}
+.footer {
+	display: flex;
+	gap: 30px;
+	justify-content: space-between;
+
+}
+.footer a {
+	text-decoration: none;
+	text-transform: capitalize;
+	color: var(--accent);
+	transition: .3s;
+
+}
+.footer a:hover {
+	color: var(--primary);
+}
+.footer a:last-child {
+	text-decoration: underline;
+}
+a.active {
+	color: var(--accent);
+}
+

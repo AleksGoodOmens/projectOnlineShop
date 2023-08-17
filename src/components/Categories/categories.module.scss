@@ -1,0 +1,26 @@
+.item {
+	display: flex;
+	flex-direction: column;
+	text-decoration: none;
+	color: inherit;
+	border-radius: 8px;
+	overflow: hidden;
+	text-align: center;
+	transition: 0.3s;
+	padding-bottom: 1rem;
+	&__img {
+		padding-bottom: 100%;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		margin-bottom: 1rem;
+	}
+	h3 {
+		font-size: 1rem;
+		margin: 0;
+	}
+	&:hover {
+		background-color: var(--accent);
+		box-shadow: 0 0 20px 2px var(--accent);
+	}
+}

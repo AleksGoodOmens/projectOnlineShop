@@ -1,0 +1,40 @@
+.section {
+	grid-area: auto / span 9;
+	form {
+		display: grid;
+		grid-template-columns: 3fr 1fr;
+		gap: 1rem;
+
+		> div {
+			display: grid;
+			gap: 1rem;
+		}
+		label {
+			display: flex;
+			gap: 1rem;
+			input {
+				width: 100%;
+				background-color: var(--secondary);
+				color: var(--primary);
+				padding: 5px 15px;
+				border-radius: 8px;
+				border: none;
+			}
+		}
+		img {
+			object-fit: cover;
+			object-position: center;
+			position: absolute;
+			width: 100%;
+		}
+		button {
+			place-self: center;
+		}
+	}
+}
+.img {
+	line-height: 0;
+	border-radius: 50%;
+	overflow: hidden;
+	position: relative;
+}

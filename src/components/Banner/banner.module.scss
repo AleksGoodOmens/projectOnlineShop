@@ -1,0 +1,29 @@
+.banner {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	color: var(--accent);
+	&__left {
+		display: grid;
+		place-content: center;
+		text-align: center;
+		h2 {
+			text-transform: uppercase;
+			letter-spacing: 0.2rem;
+			font-weight: 100;
+			font-size: 2rem;
+		}
+		h3 {
+			font-size: 8rem;
+			font-weight: 300;
+		}
+		button {
+			place-self: center;
+		}
+	}
+	&__right {
+		padding-bottom: 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+}

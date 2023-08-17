@@ -1,0 +1,40 @@
+.footer {
+	padding: 20px 0;
+	background-color: var(--dark-bg);
+}
+.logo {
+	position: relative;
+}
+
+.logo img {
+	object-fit: contain;
+	object-position: left;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+.icons {
+	display: flex;
+	gap: 10px;
+	justify-content: flex-end;
+	align-items:center;
+}
+
+.icons a{
+
+	color: var(--primary)
+}
+.icons a:hover {
+	color:var(--accent);
+	transition: .3s;
+}
+
+.developer {
+	text-align: center;
+
+}
+.developer a {
+	color: var(--accent);
+	text-decoration: none;
+}
