@@ -1,94 +1,95 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
-import styles from "./userSingUpForm.module.scss"
-import { useDispatch, useSelector } from 'react-redux'
-import { createUser, toggleForm, toggleFormType } from '../../features/userSlice/userSlice'
+import styles from './userSingUpForm.module.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { createUser, toggleFormType } from '../../features/userSlice/userSlice';
 
-function UserSingUpForm({handleClose}) {
-	const { showForm, formType } = useSelector(({ user }) => user)
+function UserSingUpForm({ handleClose }) {
+	const { showForm } = useSelector(({ user }) => user);
 
-	const dispatch = useDispatch()
-
+	const dispatch = useDispatch();
 
 	const [values, setValues] = useState({
-		name: "",
-		email: "",
-		password: "",
-		avatar:""
-	})
-
+		name: '',
+		email: '',
+		password: '',
+		avatar: '',
+	});
 
 	const handleChange = ({ target: { value, name } }) => {
-		setValues({...values,[name]: value, })
-	}
+		setValues({ ...values, [name]: value });
+	};
 
 	const handleSubmit = (e) => {
-		e.preventDefault()
+		e.preventDefault();
 
-		const isEmpty = Object.values(values).some(val => !val)
+		const isEmpty = Object.values(values).some((val) => !val);
 		if (isEmpty) {
 			// I can add something to show that form is empty
-			return 
+			return;
 		}
-		dispatch(createUser(values))
+		dispatch(createUser(values));
 
-		handleClose(false)
-	}
+		handleClose(false);
+	};
 
 	const handleChangeFormType = () => {
-		dispatch(toggleFormType("login"))
-
-	}
-
+		dispatch(toggleFormType('login'));
+	};
 
 	return (
 		<>
-		<div className={`${styles.body} ${showForm && styles.active}`} >
-				<h3>sing up <button onClick={handleClose}>X</button></h3>
+			<div className={`${styles.body} ${showForm && styles.active}`}>
+				<h3>
+					sing up <button onClick={handleClose}>X</button>
+				</h3>
 				<form onSubmit={handleSubmit}>
 					<label>
 						<input
 							type="email"
 							name="email"
-							placeholder='Your email'
+							placeholder="Your email"
 							value={values.email}
 							onChange={handleChange}
-							required />
+							required
+						/>
 					</label>
 					<label>
 						<input
 							type="name"
 							name="name"
-							placeholder='Your name'
+							placeholder="Your name"
 							value={values.name}
 							onChange={handleChange}
-							required />
+							required
+						/>
 					</label>
 					<label>
 						<input
 							type="password"
-						name="password"
-						placeholder='Your password'
+							name="password"
+							placeholder="Your password"
 							value={values.password}
 							onChange={handleChange}
-							required />
+							required
+						/>
 					</label>
 					<label>
 						<input
 							type="text"
 							name="avatar"
-							placeholder='Your avatar'
+							placeholder="Your avatar"
 							value={values.avatar}
 							onChange={handleChange}
-							required />
+							required
+						/>
 					</label>
 					<div onClick={handleChangeFormType}>I already have an account</div>
-					<button className='button'>create an account</button>
+					<button className="button">create an account</button>
 				</form>
-		</div>
+			</div>
 		</>
-		
-	)
+	);
 }
 
-export default UserSingUpForm
+export default UserSingUpForm;

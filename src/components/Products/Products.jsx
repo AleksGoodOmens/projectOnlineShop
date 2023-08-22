@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import stylesies from './products.module.scss';
+import styluses from './products.module.scss';
 
 function Products({ title, styles = {}, products = [], amount }) {
 	const list = products.filter((_, i) => i < amount);
 
 	return (
-		<section className="grid_12">
+		<section className="grid-12">
 			{title && <h2>{title}</h2>}
 			<div className="row g-3">
 				{list.map(({ id, images, title, category: { name: cat }, price }) => (
@@ -17,17 +17,17 @@ function Products({ title, styles = {}, products = [], amount }) {
 					>
 						<Link
 							to={`/products/${id}`}
-							className={stylesies.item}
+							className={styluses.item}
 						>
 							<div
-								className={stylesies.item__img}
+								className={styluses.item__img}
 								style={{ backgroundImage: `url(${images})` }}
 							></div>
-							<div className={stylesies.item__body}>
+							<div className={styluses.item__body}>
 								<h3>{title}</h3>
-								<div className={stylesies.item__subtitle}>{cat}</div>
-								<div className={stylesies.item__wrapper}>
-									<span className={stylesies.item__prices}>
+								<div className={styluses.item__subtitle}>{cat}</div>
+								<div className={styluses.item__wrapper}>
+									<span className={styluses.item__prices}>
 										<span>{price} £</span>
 										<span>{Math.floor(price * 1.2)} £</span>
 									</span>

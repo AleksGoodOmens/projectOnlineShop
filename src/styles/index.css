@@ -73,14 +73,14 @@ button:disabled:hover {
 
 /* grid */
 
-.grid_12 {
+.grid-12 {
 	grid-area: auto / span 12;
 	padding: 0 20px 20px 20px;
 	background-color: var(--dark-bg);
 	border-radius: 8px;
 	
 }
-.grid_12 h2 {
+.grid-12 h2 {
 	text-align: center;
 	text-transform: capitalize;
 	padding: 1rem 0;

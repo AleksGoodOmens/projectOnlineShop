@@ -57,7 +57,7 @@ function Category() {
 		setItems((_items) => [..._items, ...data]);
 	}, [data, isLoading]);
 
-	const handleResset = () => {
+	const handleReset = () => {
 		setValues({
 			price_min: '',
 			price_max: '',
@@ -123,10 +123,10 @@ function Category() {
 					<div>Loading...</div>
 				) : !isSuccess || !items.length ? (
 					<div>
-						<span>No ressults in {cat?.name}</span>
+						<span>No results in {cat?.name}</span>
 						<button
 							className="button"
-							onClick={handleResset}
+							onClick={handleReset}
 						>
 							Reset
 						</button>
