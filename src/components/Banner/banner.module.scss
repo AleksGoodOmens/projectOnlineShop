@@ -1,11 +1,28 @@
+@import "../../styles/helpers/variables/variables";
+@import "../../styles/helpers/mixins/mixins";
+
 .banner {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
 	color: var(--accent);
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	display: grid;
+
+	@include md {
+		margin-top: 0;
+		margin-bottom: 0;
+		grid-template-columns: repeat(2, 1fr);
+	}
 	&__left {
 		display: grid;
 		place-content: center;
 		text-align: center;
+		margin-bottom: 1rem;
+		order: 1;
+		@include md {
+			margin-bottom: 0;
+			order: 0;
+		}
+
 		h2 {
 			text-transform: uppercase;
 			letter-spacing: 0.2rem;
@@ -13,8 +30,11 @@
 			font-size: 2rem;
 		}
 		h3 {
-			font-size: 8rem;
+			font-size: 6rem;
 			font-weight: 300;
+			@include lg {
+				font-size: 8rem;
+			}
 		}
 		button {
 			place-self: center;

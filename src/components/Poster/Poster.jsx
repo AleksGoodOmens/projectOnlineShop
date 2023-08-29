@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './poster.module.scss';
-import laptop from './imgs/pavilion-laptop-front-view-gears-of-war-4-james-pc-computer-electronics-person-transparent-png-151342-removebg-preview.png';
+import laptop from './imgs/1.png';
 
 const data = {
 	title_bg: 'big sale 20%',

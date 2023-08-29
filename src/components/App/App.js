@@ -18,7 +18,7 @@ function App() {
 
 	return (
 		<div className="app">
-			<Header className="header" />
+			<Header />
 			<main className="container">
 				<div className="grid">
 					<Sidebar />
