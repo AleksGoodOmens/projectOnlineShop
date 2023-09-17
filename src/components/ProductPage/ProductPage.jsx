@@ -34,7 +34,7 @@ function ProductPage() {
 			{isSuccess ? <SingleProduct {...data} /> : <section>loading...</section>}
 			<Products
 				products={related}
-				amount={5}
+				amount={6}
 				title="related"
 			/>
 		</>

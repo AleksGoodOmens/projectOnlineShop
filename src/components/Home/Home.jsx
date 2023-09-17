@@ -25,18 +25,18 @@ function Home() {
 			<Poster />
 			<Products
 				products={list}
-				amount={5}
+				amount={6}
 				title="trending"
 			/>
 			<Categories
 				categories={categories.list}
-				amount={5}
+				amount={4}
 				title="worth seeing"
 			/>
 			<Banner />
 			<Products
 				products={filtered}
-				amount={5}
+				amount={6}
 				title="Under £100"
 			/>
 		</>

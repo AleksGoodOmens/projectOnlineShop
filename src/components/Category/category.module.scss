@@ -1,23 +1,30 @@
+@import "../../styles/helpers/mixins/mixins";
+@import "../../styles/helpers/variables/variables";
+
 .category {
 	grid-column: span 12;
 	form {
 		margin: 2rem 0;
-		display: flex;
+		display: grid;
 		gap: 1rem;
+		@include lg {
+			grid-template-columns: repeat(3, 1fr);
+		}
 
 		label {
-			width: 100%;
 			display: flex;
 			align-items: center;
-			background-color: var(--dark-bg);
 			border-radius: 8px;
 			&:focus-within {
 				outline: 1px solid var(--accent);
-				// border: 1px solid var(--accent);
 			}
 			span {
 				color: var(--primary);
 				padding: 5px 10px;
+				background-color: var(--dark-bg);
+				border-radius: 0px 8px 8px 0;
+				display: inline-block;
+				height: 34px;
 			}
 		}
 
@@ -27,7 +34,7 @@
 			color: var(--primary);
 			padding: 5px 10px;
 			background-color: var(--dark-bg);
-			border-radius: 8px;
+			border-radius: 8px 0 0 8px;
 			// height: 34px;
 			align-self: flex-end;
 

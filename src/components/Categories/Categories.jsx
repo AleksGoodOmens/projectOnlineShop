@@ -11,21 +11,17 @@ function Categories({ title, categories = [], amount }) {
 			<h2>{title}</h2>
 			<div className="row">
 				{list.map(({ id, name, image }) => (
-					<article
+					<Link
 						key={id}
-						className="col"
+						className={`${styles.item} col-12 col-sm-6 col-md-3`}
+						to={`/categories/${id}`}
 					>
-						<Link
-							className={styles.item}
-							to={`/categories/${id}`}
-						>
-							<div
-								className={styles.item__img}
-								style={{ backgroundImage: `url(${image})` }}
-							/>
-							<h3>{name}</h3>
-						</Link>
-					</article>
+						<div
+							className={styles.item__img}
+							style={{ backgroundImage: `url(${image})` }}
+						/>
+						<h3>{name}</h3>
+					</Link>
 				))}
 			</div>
 		</section>

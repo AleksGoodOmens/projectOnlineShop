@@ -1,7 +1,14 @@
+@import "../../styles/helpers/mixins/mixins";
+@import "../../styles/helpers/variables/variables";
+
 .item {
+	@include sm {
+	}
+
 	display: flex;
 	height: 100%;
 	flex-direction: column;
+
 	text-decoration: none;
 	color: inherit;
 	border-radius: 8px;

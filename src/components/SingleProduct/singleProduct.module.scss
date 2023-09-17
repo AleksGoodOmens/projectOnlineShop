@@ -1,18 +1,33 @@
+@import "../../styles/helpers/mixins/mixins";
+@import "../../styles/helpers/variables/variables";
+
 .section {
-	grid-area: auto / span 9;
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	@include md {
+		grid-area: auto / span 8;
+	}
+	@include lg {
+		grid-area: auto / span 9;
+		display: grid;
+
+		grid-template-columns: repeat(2, 1fr);
+	}
+
 	gap: 1rem;
 	background-color: var(--dark-bg);
 	padding: 1rem;
 	border-radius: 8px;
 }
 .images {
-	display: grid;
-	grid-template-columns: 3fr 1fr;
-	gap: 1rem;
+	@include md {
+		display: grid;
+		grid-template-columns: 3fr 1fr;
+		gap: 1rem;
+	}
+
 	&__main_img {
+		margin-bottom: 1rem;
 		position: relative;
+		min-height: 240px;
 		img {
 			position: absolute;
 		}
@@ -27,7 +42,14 @@
 	&__imgs {
 		display: grid;
 		gap: 1rem;
-		grid-template-rows: repeat(3, 1fr);
+		grid-template-columns: repeat(3, 1fr);
+		margin-bottom: 1rem;
+
+		@include md {
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(3, 1fr);
+		}
+
 		img {
 			cursor: pointer;
 			&:hover {
@@ -37,6 +59,8 @@
 	}
 	&__img_item {
 		position: relative;
+		min-height: 80px;
+
 		img {
 			position: absolute;
 		}
@@ -69,8 +93,23 @@
 		}
 	}
 	.buttons {
+		margin: 1rem 0;
+		@include lg {
+			margin: 0;
+		}
+		button {
+			display: block;
+			width: 100%;
+			margin-bottom: 1rem;
+
+			@include sm {
+				width: unset;
+				display: unset;
+				margin-bottom: unset;
+				margin-right: 1rem;
+			}
+		}
 		button:last-child {
-			margin-left: 1rem;
 			background-color: var(--secondary);
 			transition: 0.3s;
 			&:hover {

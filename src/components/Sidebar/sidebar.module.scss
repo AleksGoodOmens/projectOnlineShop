@@ -7,6 +7,8 @@
 	border-radius: 8px;
 	padding: 10px;
 	margin-bottom: 1rem;
+	display: flex;
+	flex-direction: column;
 
 	@include md {
 		margin-bottom: 0;
@@ -28,8 +30,8 @@ nav {
 .list {
 	list-style: none;
 	margin-bottom: 2rem;
-	padding: 0;
-	overflow: scroll;
+	padding: 0 0 2rem 0;
+	overflow: auto;
 	display: flex;
 	gap: 1rem;
 	li {
@@ -37,13 +39,14 @@ nav {
 	}
 	@include md {
 		flex-direction: column;
-		height: 230px;
+		min-height: 230px;
 	}
 }
 
 /* width */
 .list::-webkit-scrollbar {
 	width: 5px;
+	height: 5px;
 	cursor: pointer;
 }
 /* button */

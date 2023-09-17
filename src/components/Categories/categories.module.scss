@@ -8,12 +8,14 @@
 	text-align: center;
 	transition: 0.3s;
 	padding-bottom: 1rem;
+	// min-width: 230px;
 	&__img {
 		padding-bottom: 100%;
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;
 		margin-bottom: 1rem;
+		min-width: 100px;
 	}
 	h3 {
 		font-size: 1rem;

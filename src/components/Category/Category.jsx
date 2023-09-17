@@ -95,6 +95,7 @@ function Category() {
 							onChange={handleChange}
 							value={values.title}
 						/>
+						<span></span>
 					</label>
 					<label>
 						<input

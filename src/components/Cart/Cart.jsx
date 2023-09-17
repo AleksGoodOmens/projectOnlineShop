@@ -8,7 +8,7 @@ import {
 } from '../../features/userSlice/userSlice';
 
 function Cart() {
-	const { cart } = useSelector(({ user }) => user);
+	const { cart, currentUser } = useSelector(({ user }) => user);
 
 	const dispatch = useDispatch();
 
@@ -22,7 +22,7 @@ function Cart() {
 	return (
 		<section className={styles.cart}>
 			<div className={styles.cart__wrapper}>
-				<h1>Cart of userName</h1>
+				<h1>Cart of {currentUser ? currentUser.name : 'Guest'}</h1>
 				{!cart.length ? (
 					<div>no items in your cart</div>
 				) : (
@@ -32,7 +32,9 @@ function Cart() {
 
 							return (
 								<li key={id}>
-									<section className={styles.list__item}>
+									<section
+										className={`${styles.list__item} ${styles.list__item_top}`}
+									>
 										<div className={styles.picture}>
 											<img
 												src={images[0]}
@@ -45,9 +47,9 @@ function Cart() {
 										</section>
 									</section>
 
-									<section className={styles.list__item}>
-										<section className={styles.price}>£ {price}</section>
-
+									<section
+										className={`${styles.list__item} ${styles.list__item_bottom}`}
+									>
 										<section className={styles.quantity}>
 											<button
 												onClick={() =>
